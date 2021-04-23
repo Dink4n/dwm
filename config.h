@@ -92,10 +92,11 @@ ResourcePref resources[] = {
 static Key keys[] = {
 	/* modifier                     key        function        argument */
     /* wm independent hotkeys */
-	{ MODKEY,                       XK_space,  spawn,          {.v = dmenucmd } },
+	{ MODKEY,                       XK_p,      spawn,          {.v = dmenucmd } },
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
     { MODKEY,                       XK_w,      spawn,          SHCMD("$BROWSER") },
     { MODKEY,                       XK_r,      spawn,          SHCMD("randwal") },
+    { MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("loginctl suspend") },
 
     /* Audio */
     { MODKEY,                       XK_a,      spawn,          SHCMD(TERM " -e alsamixer") },
@@ -113,7 +114,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
 	{ MODKEY,                       XK_h,      setmfact,       {.f = -0.05} },
 	{ MODKEY,                       XK_l,      setmfact,       {.f = +0.05} },
-	{ MODKEY|ShiftMask,             XK_Return, zoom,           {0} },
+	{ MODKEY,                       XK_space,  zoom,           {0} },
 	{ MODKEY,                       XK_Tab,    view,           {0} },
 	{ MODKEY,                       XK_q,      killclient,     {0} },
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
@@ -140,8 +141,8 @@ static Key keys[] = {
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ ControlMask|Mod1Mask,         XK_Right,  shiftviewclients, { .i = +1 } },
-	{ ControlMask|Mod1Mask,         XK_Left,   shiftviewclients, { .i = -1 } },
+	{ MODKEY,                       XK_bracketright,  shiftviewclients, { .i = +1 } },
+	{ MODKEY,                       XK_bracketleft,   shiftviewclients, { .i = -1 } },
 	TAGKEYS(                        XK_KP_End,                      0)
 	TAGKEYS(                        XK_KP_Down,                     1)
 	TAGKEYS(                        XK_KP_Next,                     2)
