@@ -1706,8 +1706,6 @@ sigchld(int unused)
 void
 spawn(const Arg *arg)
 {
-	if (selmon->sel && selmon->sel->isfullscreen)
-		setfullscreen(selmon->sel, !selmon->sel->isfullscreen);
 	if (arg->v == dmenucmd)
 		dmenumon[0] = '0' + selmon->num;
 	if (fork() == 0) {
