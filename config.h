@@ -120,9 +120,9 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_q,      quit,           {0} },
 
     /* Gaps */
-	{ MODKEY,                       XK_KP_Add,       setgaps,        {.i = +1 } },
-	{ MODKEY,                       XK_KP_Subtract,  setgaps,        {.i = -1 } },
-	{ MODKEY|ShiftMask,             XK_KP_Add,       setgaps,        {.i = 0  } },
+	{ MODKEY|ControlMask,           XK_equal,  setgaps,        {.i = +1 } },
+	{ MODKEY|ControlMask,           XK_minus,  setgaps,        {.i = -1 } },
+	{ MODKEY|ControlMask,           XK_0,      setgaps,        {.i = 0  } },
 
     /* Layouts */
 	{ MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
@@ -135,23 +135,23 @@ static Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_f,      togglefloating, {0} },
 
     /* Tags */
-	{ MODKEY,                       XK_KP_Insert, view,        {.ui = ~0 } },
-	{ MODKEY|ShiftMask,             XK_KP_Insert, tag,         {.ui = ~0 } },
+	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
+	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
 	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } },
 	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } },
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 	{ MODKEY,                       XK_bracketright,  shiftviewclients, { .i = +1 } },
 	{ MODKEY,                       XK_bracketleft,   shiftviewclients, { .i = -1 } },
-	TAGKEYS(                        XK_KP_End,                      0)
-	TAGKEYS(                        XK_KP_Down,                     1)
-	TAGKEYS(                        XK_KP_Next,                     2)
-	TAGKEYS(                        XK_KP_Left,                     3)
-	TAGKEYS(                        XK_KP_Begin,                    4)
-	TAGKEYS(                        XK_KP_Right,                    5)
-	TAGKEYS(                        XK_KP_Home,                     6)
-	TAGKEYS(                        XK_KP_Up,                       7)
-	TAGKEYS(                        XK_KP_Prior,                    8)
+	TAGKEYS(                        XK_1,                      0)
+	TAGKEYS(                        XK_2,                      1)
+	TAGKEYS(                        XK_3,                      2)
+	TAGKEYS(                        XK_4,                      3)
+	TAGKEYS(                        XK_5,                      4)
+	TAGKEYS(                        XK_6,                      5)
+	TAGKEYS(                        XK_7,                      6)
+	TAGKEYS(                        XK_8,                      7)
+	TAGKEYS(                        XK_9,                      8)
 };
 
 /* button definitions */
