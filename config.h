@@ -7,7 +7,6 @@ static unsigned int snap      = 32;       /* snap pixel */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
 static char font[]            = "monospace:size=12";
-static char dmenufont[]       = "monospace:size=12";
 static const char *fonts[]          = { font, "JoyPixels:pixelsize=14:antialias=true:autohint=true" };
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
@@ -64,7 +63,7 @@ static const Layout layouts[] = {
 
 /* commands */
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
-static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", dmenufont, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
+static const char *dmenucmd[] = { "dmenu_run", "-m", dmenumon, "-fn", font, "-nb", normbgcolor, "-nf", normfgcolor, "-sb", selbordercolor, "-sf", selfgcolor, NULL };
 static const char *termcmd[]  = { TERM, NULL };
 
 /*
@@ -72,7 +71,6 @@ static const char *termcmd[]  = { TERM, NULL };
  */
 ResourcePref resources[] = {
 		{ "font",               STRING,  &font },
-		{ "dmenufont",          STRING,  &dmenufont },
 		{ "normbgcolor",        STRING,  &normbgcolor },
 		{ "normbordercolor",    STRING,  &normbordercolor },
 		{ "normfgcolor",        STRING,  &normfgcolor },
@@ -96,6 +94,7 @@ static Key keys[] = {
 	{ MODKEY,                       XK_Return, spawn,          {.v = termcmd } },
     { MODKEY,                       XK_w,      spawn,          SHCMD("$BROWSER") },
     { MODKEY,                       XK_r,      spawn,          SHCMD("randwal") },
+    { MODKEY|ShiftMask,             XK_l,      spawn,          SHCMD("dmenubooks") },
     { MODKEY|ShiftMask,             XK_e,      spawn,          SHCMD("loginctl suspend") },
 
     /* Audio */
