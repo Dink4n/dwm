@@ -11,6 +11,8 @@ static int smartgaps          = 0;        /* 1 means no outer gap when there is 
 static int swallowfloating    = 0;        /* 1 means swallow floating windows by default */
 static int showbar            = 1;        /* 0 means no bar */
 static int topbar             = 1;        /* 0 means bottom bar */
+static int baroffy            = 0;        /* bar offset y */
+static int baroffx            = 0;        /* bar offset x */
 static char font[]            = "monospace:size=12";
 static const char *fonts[]          = { font, "JoyPixels:pixelsize=14:antialias=true:autohint=true" };
 static char normbgcolor[]           = "#222222";
@@ -100,6 +102,8 @@ ResourcePref resources[] = {
 		{ "snap",          		INTEGER, &snap },
 		{ "showbar",          	INTEGER, &showbar },
 		{ "topbar",          	INTEGER, &topbar },
+		{ "baroffx",          	INTEGER, &baroffx },
+		{ "baroffy",          	INTEGER, &baroffy },
 		{ "nmaster",          	INTEGER, &nmaster },
 		{ "resizehints",       	INTEGER, &resizehints },
 		{ "mfact",      	 	FLOAT,   &mfact },
